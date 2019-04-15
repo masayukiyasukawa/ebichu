@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to image_tag("logo.jpeg", :class => "logo"), :action => "index" %>
+      <ul>
+        <li>ユーザ一覧</li>
+        <li>投稿一覧</li>
+        <li>曲別投稿</li>
+        <li>メンバー別投稿</li>
+        <li>マイページ</li>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
