@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+アイドルグループ私立恵比寿中学（通称：エビ中）のこの曲・このメンバーの
+ここが好き！を投稿・共有するアプリです。
 
-Things you may want to cover:
+使用した技術
 
-* Ruby version
+概要
 
-* System dependencies
+機能
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Requirement
+ruby 2.5.1
+rails 5.2.3
