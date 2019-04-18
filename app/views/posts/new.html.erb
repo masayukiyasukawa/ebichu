@@ -1,0 +1,14 @@
+<h1>新規投稿</h1>
+
+<%= form_for(@post) do |f| %>
+  <%= f.label :song %>
+  <%= f.select :song, [["梅", "梅"], ["YELL", "YELL"]], :prompt => "選択してください" %>
+
+  <%= f.label :member %>
+  <%= f.select :member, [["真山りか", "真山りか"], ["安本彩花", "安本彩花"], ["星名美怜", "星名美怜"],["柏木ひなた", "柏木ひなた"],["小林歌穂", "小林歌穂"],["中山莉子", "中山莉子"]], :prompt => "選択してください" %>
+
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

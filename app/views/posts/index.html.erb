@@ -1,1 +1,9 @@
 <h1>アイドルグループ私立恵比寿中学（通称：エビ中）のこの曲・このメンバーの ここが好き！を投稿・共有するアプリです。</h1>
+
+
+<p><% @posts.each do |post| %></p>
+  <%= post.song %>
+  <%= post.member %>
+  <%= post.comment %>
+  <%= post.created_at %>
+<% end %>
