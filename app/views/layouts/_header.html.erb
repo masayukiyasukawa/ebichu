@@ -9,7 +9,7 @@
         <li>メンバー別投稿一覧</li>
         <% if logged_in? %>
           <li><%= link_to "新規投稿", new_post_path %></li>
-          <li>マイページ</li>
+          <li><%= link_to "#{current_user.name}さんのマイページ", current_user %></li>
           <li>
             <%= link_to "ログアウト", logout_path, method: :delete %>
           </li>
