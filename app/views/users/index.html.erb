@@ -1,0 +1,14 @@
+<h1>エビ中ファミリー一覧</h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user.name, user %>
+      <% if current_user.admin? && !current_user?(user) %>
+      |<%= link_to "出禁", user, method: :delete,
+                                  data: { confirm: "ええんか？" } %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<%= paginate @users %>
