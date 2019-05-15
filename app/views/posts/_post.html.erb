@@ -2,7 +2,11 @@
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="song"><%= post.song %></span>
   <span class="member"><%= post.member %></span>
-  <span class="comment"><%= post.comment %></span>
+  <span class="comment">
+   <%= post.comment %>
+   <%= image_tag post.picture.url if post.picture? %>
+  </span>
+
   <span class="timestamp">
     <%= time_ago_in_words(post.created_at) %> ago.
     <% if current_user?(post.user) %>

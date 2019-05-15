@@ -7,6 +7,8 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.3'
 gem 'bcrypt', '3.1.12'
 gem 'faker', '1.9.1'
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
 gem 'kaminari', '~> 0.17.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -59,6 +61,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :production do
+  gem 'pg',  '0.20.0'
+  gem 'fog', '1.42'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

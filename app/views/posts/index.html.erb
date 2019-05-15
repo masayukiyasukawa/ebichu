@@ -6,5 +6,6 @@
   <%= post.song %>
   <%= post.member %>
   <%= post.comment %>
+  <%= image_tag post.picture.url if post.picture? %>
   <%= time_ago_in_words(post.created_at) %> ago.
 <% end %>
