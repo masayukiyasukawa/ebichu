@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update, :destroy,
+  :following, :followers]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
   PER = 5
@@ -10,7 +11,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.page(params[:page]).per(PER)
+    # @posts = @user.posts.page(params[:page]).per(PER)
+    @post  = current_user.posts.build
+    @feed_items = current_user.feed.page(params[:page]).per(PER)
   end
 
   def new
@@ -46,6 +49,20 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "出禁にしたったで！"
     redirect_to users_url
+  end
+
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.page(params[:page]).per(PER)
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.page(params[:page]).per(PER)
+    render 'show_follow'
   end
 
   private

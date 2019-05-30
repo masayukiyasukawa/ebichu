@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_url
     else
+      @feed_items = []
       render 'new'
     end
   end

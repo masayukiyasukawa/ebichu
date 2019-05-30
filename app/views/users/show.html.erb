@@ -1,12 +1,15 @@
 <h1>
   <%= @user.name %>
+  <%= render 'shared/stats' %>
   <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
     <% if @user.posts.any? %>
       <h3>投稿数(<%= @user.posts.count %>)</h3>
       <ol class="posts">
-        <%= render @posts %>
+        <h3>Micropost Feed</h3>
+        <%= render 'shared/feed' %>
       </ol>
     <% end %>
-      <%= paginate @posts %>
+      <%= paginate @feed_items %>
   </div>
 </h1>
